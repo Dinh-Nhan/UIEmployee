@@ -24,13 +24,14 @@
     -fx-border-color: #748CF1;
 }
 
-#btn_home {
+.btn_home {
     -fx-background-color: #141313;
     -fx-border-width: 2px;
     -fx-border-radius: 50px;
     -fx-background-radius: 50px;
     -fx-border-style: solid;
     -fx-border-color: #141313;
+    -fx-cursor: hand;
 }
 
 .btn_home1 {
@@ -40,6 +41,7 @@
     -fx-background-radius: 50px;
     -fx-border-style: solid;
     -fx-border-color: #141313;
+    -fx-cursor: hand;
 }
 
 .avatar {

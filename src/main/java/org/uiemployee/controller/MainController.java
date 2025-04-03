@@ -19,11 +19,46 @@ public class MainController {
     private Scene scene;
     private Stage stage;
 
+    // Chuyển đổi giữa các cửa số menu
+    public void home (ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("/org/uiemployee/home-view.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void employee (ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("/org/uiemployee/employee-view.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void manage (ActionEvent event) throws IOException{
+        root = FXMLLoader.load(getClass().getResource("/org/uiemployee/manage-view.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void order (ActionEvent event) throws IOException{
+        root = FXMLLoader.load(getClass().getResource("/org/uiemployee/order-view.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 
     @FXML
     private HBox productContainer;
 
     public void initialize() {
+        if (productContainer == null)
+            return;
+
         List<Product> products = new ArrayList<>();
         products.add(new Product("iPhone 15", "Apple", "30,000,000 VNĐ", "/img/iphone15.png"));
         products.add(new Product("Samsung S23", "Samsung", "22,000,000 VNĐ", "/img/samsung_s23.png"));
@@ -33,36 +68,5 @@ public class MainController {
             productContainer.getChildren().add(productController.createProductPane(product));
         }
     }
-// Chuyển đổi giữa các cửa số menu
-    public void home (ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("home-view.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
 
-    public void employee (ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("employee-view.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    public void manage (ActionEvent event) throws IOException{
-        root = FXMLLoader.load(getClass().getResource("manage-view.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    public void order (ActionEvent event) throws IOException{
-        root = FXMLLoader.load(getClass().getResource("order-view.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
 }

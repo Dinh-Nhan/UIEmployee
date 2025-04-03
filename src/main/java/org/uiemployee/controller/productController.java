@@ -8,7 +8,7 @@ import javafx.scene.layout.Pane;
 import org.uiemployee.model.Product;
 
 public class productController {
-    public static Pane createProductPane(Product product) {
+    public static Pane createProductPane (Product product) {
         Pane pane = new Pane();
         pane.setPrefSize(216, 287);
         pane.setStyle("-fx-border-color: black; -fx-border-radius: 10px;");
